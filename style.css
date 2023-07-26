@@ -218,3 +218,129 @@ footer a {
         width: 23%;
     }
 }
+
+/*  RESPONSIVE : MOBILE VERSION  */
+
+/*
+      * in real life, Always start coding  the Mobile version First (Mobile First Approach)
+      * then the Tablet and then the Desktop version
+      * 
+      * we don't need to change anything in the HTML file
+        * we just need to add the media queries in the CSS file
+      * see the acctual website there is two columns the first one is the image and the second one is the content (text)
+        * so we need to change the flex-direction to be just one column in mobile version
+        * we need to change the width of the image and content to be 100% in mobile version
+        * you can play with image height to make it fit your needs
+        *so things that we need to change :
+            * 1- flex-direction
+            * 2- width of the image and content
+            * 3- image height
+            * 4- padding & margin of the containers and boxs
+            * 5- font-size
+
+
+     test the website in different devices to make sure that everything is working fine
+    i'm using the chrome dev tools to test the website in different devices
+    in this cas i'm only use iphone 12/13 pro max  (428px width and 926px height) there are some small 
+    differences between other devices (not in all cases)
+     
+*/
+
+
+/* here this means that we want tp apply this style only for devices with width less then 428px*/
+@media screen and (max-width: 428px) {
+
+    /*we see that github bar and the image under it are fine we dont need
+    to change anything 
+   */
+
+    /* change the container to column direction 
+       and update the margin   
+   */
+    .feature {
+        flex-direction: column;
+        margin: 2rem 0;
+    }
+
+    /*
+    in desktop version we have some images on the left and content on the right and in 
+    other cases we have contrary we can use the order property to change the order of the elements
+    and make sure that the image is always on the top
+    
+    */
+    .feature-img-box {
+        width: 100%;
+        height: 400px;
+        order: 1;
+    }
+
+    .feature-img,
+    .feature-graphic {
+        width: 100%;
+        height: 400px;
+    }
+
+    .feature-content {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .feature-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-content p {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 30px 20px;
+    }
+
+    .container>h2 {
+        font-size: 1.5rem;
+    }
+
+    .container>p,
+    .conatact-header p,
+    label,
+    footer p {
+        font-size: 1rem;
+    }
+
+    .contact .container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* here in contact section i make only one column*/
+    .contact-row {
+        flex-direction: column;
+    }
+
+    .contact-row .contact-input {
+        width: 100%;
+    }
+
+    .contact form button {
+        margin-top: 1rem;
+        align-self: center;
+    }
+
+    .social-icons {
+        width: 40%;
+    }
+
+    .social-icons a {
+        margin: 0 0.5rem;
+    }
+
+    .social-icons svg {
+        width: 20px;
+    }
+}
+
+/*
+and that's it for the mobile version
+*/
